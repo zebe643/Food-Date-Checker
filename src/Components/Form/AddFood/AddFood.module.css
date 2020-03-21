@@ -1,0 +1,29 @@
+.foodseg {
+  min-height: 100%;
+  width: 100%;
+  margin-top: 90px;
+  background-color: #f7f7f7;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.formbody {
+  padding-left: 25px;
+}
+
+.buttondiv {
+  padding-left: 25px;
+  padding-top: 15px;
+}
+
+.topinside {
+  width: 100%;
+  height: 80px;
+  background-color: #b4c1f6;
+}
+
+h1 {
+  font-family: "Indie Flower", cursive;
+  text-align: center;
+  text-decoration: underline;
+}

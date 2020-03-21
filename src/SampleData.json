@@ -1,0 +1,12 @@
+[
+  {
+    "food": "beans",
+    "quantity": "3",
+    "expiry": "20/10/2026"
+  },
+  {
+    "food": "bread",
+    "quantity": "2",
+    "expiry": "26/03/2020"
+  }
+]

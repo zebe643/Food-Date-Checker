@@ -1,0 +1,10 @@
+.form {
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 750px;
+  min-height: 750px;
+  background-color: #758ef0;
+}
