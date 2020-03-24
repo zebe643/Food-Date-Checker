@@ -1,12 +1,17 @@
 [
   {
-    "food": "beans",
+    "food": "Beans",
     "quantity": "3",
     "expiry": "20/10/2026"
   },
   {
-    "food": "bread",
+    "food": "Bread",
     "quantity": "2",
     "expiry": "26/03/2020"
+  },
+  {
+    "food": "Chicken",
+    "quantity": "4",
+    "expiry": "29/03/2020"
   }
 ]

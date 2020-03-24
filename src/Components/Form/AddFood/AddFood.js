@@ -32,16 +32,20 @@ const AddFood = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const handleFormSubmit = () => {
-    let foodObj = {
-      food: foodItem,
-      quantity: foodQuantity,
-      expiry: foodExpiry
-    };
-    setAddedFoodList(addedFoodList => [...addedFoodList, foodObj]);
-    setFoodItem("");
-    setFoodExpiry();
-    setFoodQuantity("");
-    setSelectedDate(new Date());
+    if (foodItem !== "" && foodExpiry !== undefined && foodQuantity !== "") {
+      let foodObj = {
+        food: foodItem,
+        quantity: foodQuantity,
+        expiry: foodExpiry
+      };
+      setAddedFoodList(addedFoodList => [...addedFoodList, foodObj]);
+      setFoodItem("");
+      setFoodExpiry();
+      setFoodQuantity(0);
+      setSelectedDate(new Date());
+    } else {
+      alert("PLEASE COMPLETE ALL FIELDS");
+    }
   };
 
   const handleDateChange = date => {
@@ -54,6 +58,23 @@ const AddFood = () => {
 
     setSelectedDate(date);
     setFoodExpiry(MyDateString);
+  };
+
+  let sortedArray = addedFoodList.sort((a, b) =>
+    a.expiry
+      .split("/")
+      .reverse()
+      .join()
+      .localeCompare(
+        b.expiry
+          .split("/")
+          .reverse()
+          .join()
+      )
+  );
+
+  const removeItem = () => {
+    setFoodQuantity();
   };
 
   return (
@@ -90,6 +111,8 @@ const AddFood = () => {
             onChange={e => setFoodQuantity(e.target.value)}
             value={foodQuantity}
             label="Quantity"
+            type="number"
+            required
           />
         </div>
       </div>
@@ -98,7 +121,7 @@ const AddFood = () => {
           Add Food!
         </Button>
       </div>
-      <MyFood foodList={addedFoodList} />
+      <MyFood foodList={sortedArray} removeItem={removeItem} />
     </div>
   );
 };

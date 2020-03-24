@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MyFood.module.css";
 import List from "@material-ui/core/List";
 import FoodListElement from "./FoodListElement";
-import Divider from "@material-ui/core/Divider";
 
 const MyFood = props => {
   return (
@@ -18,9 +17,9 @@ const MyFood = props => {
                 expiry={item.expiry}
                 labelid={labelId}
                 quantity={item.quantity}
+                removeItem={props.removeItem}
               />
             </List>
-            <Divider />
           </List>
         );
       })}
